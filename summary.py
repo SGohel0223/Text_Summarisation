@@ -1,6 +1,8 @@
 from transformers import Trainer, TrainingArguments, T5ForConditionalGeneration
 from transformers import AutoTokenizer
 from datasets import load_dataset
+from utils.utils import tokenize_for_inference
+
 
 
 def get_data():
