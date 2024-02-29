@@ -1,0 +1,19 @@
+# Use a base image with Python installed
+FROM python:3.9
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy the requirements file to the container
+COPY requirements.txt .
+
+# Install the required packages
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy the source code to the container
+COPY  summary.py .
+COPY run_project.py .
+COPY utils ./utils
+
+# Set the command to run when the container starts
+CMD ["python", "run_project.py"]
